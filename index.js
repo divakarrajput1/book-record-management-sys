@@ -4,7 +4,7 @@ const express = require("express");
 
 // import routes
 const usersRouter = require("./routes/users");
-//const booksRouter = require("./routes/books");
+const booksRouter = require("./routes/books");
 
 const app = express();
 
@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 
 // http://localhost:801/users/
 app.use("/users", usersRouter);
-//app.use("/books", booksRouter);
+app.use("/books", booksRouter);
 
 
 app.all("*", (req, res) => {
